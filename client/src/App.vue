@@ -22,7 +22,11 @@ const toastShow = computed(() => store.state.toast.show);
 
 <style>
 * {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  @font-face {
+    font-family: 'Raleway';
+    src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+  }
+  font-family: 'Raleway','Avenir', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

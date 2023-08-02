@@ -1,8 +1,21 @@
 <script setup>
+import { ref } from "vue";
 import Cookies from "js-cookie";
 import { reactive } from "vue";
 
-const user = reactive(JSON.parse(Cookies.get("user")));
+const userData = JSON.parse(Cookies.get("user"));
+const user = ref(userData);
+
+// EditProfileView
+import EditProfileView from "./EditProfileView.vue";
+const showEditProfileModal = ref(false);
+
+const logout = () => {
+  Cookies.remove("user");
+  Cookies.remove("token");
+  window.location.reload();
+};
+
 </script>
 
 <template>
@@ -16,7 +29,33 @@ const user = reactive(JSON.parse(Cookies.get("user")));
           alt="Profile Avatar"
         />
         <h1 class="text-3xl font-semibold">{{ user.username }}</h1>
-        <p class="text-lg">{{ user.department }}</p>
+        <p class="text-lg">Department of {{ user.department }}</p>
+        <!-- Edit Profile Button -->
+        <button
+          @click="showEditProfileModal = true"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-4"
+        >
+          Edit Profile
+        </button>
+        <!-- EditProfileView -->
+        <EditProfileView
+          v-if="showEditProfileModal"
+          @close="showEditProfileModal = false"
+        />
+        <!-- Edit Profile, Change Password, Logout Buttons -->
+        <div class="mt-4 space-x-4">
+          <button
+            class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded"
+          >
+            Change Password
+          </button>
+          <button
+            @click="logout"
+            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </header>
 

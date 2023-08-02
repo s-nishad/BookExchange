@@ -21,7 +21,7 @@
     <!-- Main Content - Departments and Books -->
     <div class="container mx-auto flex">
       <!-- Sidebar for Departments -->
-      <aside class="w-1/4 p-4 bg-white">
+      <aside class="w-1/4 p-4 bg-white shadow rounded-lg">
         <h2 class="text-xl font-semibold mb-4">Departments</h2>
         <ul>
           <li
@@ -87,6 +87,24 @@ export default {
           title: "Book 2",
           thumbnail: "https://picsum.photos/200/300",
           department: "Mystery",
+        },
+        {
+          id: 3,
+          title: "Book 2",
+          thumbnail: "https://picsum.photos/200/300",
+          department: "Fiction",
+        },
+        {
+          id: 3,
+          title: "Book 2",
+          thumbnail: "https://picsum.photos/200/300",
+          department: "Fiction",
+        },
+        {
+          id: 3,
+          title: "Book 2",
+          thumbnail: "https://picsum.photos/200/300",
+          department: "Fiction",
         },
         // Add more books and their details
       ],

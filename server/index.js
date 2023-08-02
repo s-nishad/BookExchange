@@ -13,8 +13,8 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 })
 
-app.use("/auth", require("./routes/auth"))
-
+app.use("/api/v1/auth", require("./routes/auth"));
+app.use("/api/v1/profile", require("./routes/profile"));
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, (err) => {
