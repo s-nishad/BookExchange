@@ -4,8 +4,12 @@ const app = express()
 
 require("dotenv").config()
 
+// built-in middleware
 app.use(cors({ origin: "*" }))
 app.use(express.urlencoded({ extended: true }))
+
+
+// third-party middleware
 app.use(express.json())
 
 
@@ -13,6 +17,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 })
 
+// Routes
 app.use("/api/v1/auth", require("./routes/auth"));
 app.use("/api/v1/profile", require("./routes/profile"));
 

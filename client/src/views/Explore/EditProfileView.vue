@@ -13,7 +13,11 @@ const user = reactive(JSON.parse(cookies.get("user")));
 const updateUser = async () => {
   store.commit("setLoading", true, { root: true });
   try {
-    const response = await api.put(`/profile/${user._id}`, user);
+    const response = await api.put(`/profile/${user._id}`, user, {
+      headers: {
+        Authorization: `Bearer ${cookies.get("token")}`,
+      },
+    });
     if (response.data.status === "failed") {
       store.commit(
         "setToast",
@@ -27,7 +31,7 @@ const updateUser = async () => {
       store.commit("setLoading", false, { root: true });
     } else {
       cookies.remove("user");
-      cookies.set("user", JSON.stringify(response.data.data), {
+      cookies.set("user", JSON.stringify(response.data.user, ), {
         expires: 7,
       });
       store.commit(
@@ -61,7 +65,7 @@ const updateUser = async () => {
       "setToast",
       {
         show: true,
-        message: error.response.data.message,
+        message: error.message,
         type: "failed",
       },
       { root: true }

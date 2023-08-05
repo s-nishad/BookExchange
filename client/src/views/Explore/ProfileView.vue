@@ -3,8 +3,7 @@ import { ref } from "vue";
 import Cookies from "js-cookie";
 import { reactive } from "vue";
 
-const userData = JSON.parse(Cookies.get("user"));
-const user = ref(userData);
+const user = reactive(JSON.parse(Cookies.get("user")));
 
 // EditProfileView
 import EditProfileView from "./EditProfileView.vue";

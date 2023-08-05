@@ -77,7 +77,7 @@ router.post("/register", async (req, res) => {
 
         const savedUser = await newUser.save();
 
-        const token = jwt.sign({ userId: savedUser._id }, process.env.JWT_SECRET, { expiresIn: '24h' })
+        const token = jwt.sign({ user: savedUser }, process.env.JWT_SECRET, { expiresIn: '24h' })
 
         res.json({
             user: savedUser,
@@ -129,9 +129,9 @@ router.post("/login", async (req, res) => {
             });
         }
 
-        const token = jwt.sign({ userId: existingUser._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+        const token = jwt.sign({ user: existingUser }, process.env.JWT_SECRET, { expiresIn: '24h' })
 
-       res.json({
+        res.json({
             user: existingUser,
             status: "success",
             message: "User has been logged in successfully",
@@ -141,6 +141,47 @@ router.post("/login", async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ errorMessage: "Internal server error" });
+    }
+});
+
+// Admin Login route
+router.post("/admin", async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if (!email || !password) {
+            return res.json({
+                status: "failed",
+                message: "Please enter all required fields.",
+            });
+        }
+
+        if (email !== process.env.ADMIN_EMAIL) {
+            return res.json({
+                status: "failed",
+                message: "Invalid Credential",
+            });
+        }
+
+
+        const passwordCorrect = await bcrypt.compare(password, process.env.ADMIN_PASSWORD);
+
+        if (!passwordCorrect) {
+            return res.json({
+                status: "failed",
+                message: "Invalid Credential",
+            });
+        }
+
+        const token = jwt.sign({user: {email, password}}, process.env.JWT_SECRET, { expiresIn: '24h' });
+
+        res.json({
+            status: "success",
+            message: "Admin has been logged in successfully",
+            token,
+        });
+
+    } catch (error) {
+        console.log(error.message);
     }
 });
 
