@@ -31,15 +31,14 @@ const authModule = {
                 } else {
                     Cookies.set("user", JSON.stringify(response.data.user), { expires: 7, path: "" });
                     Cookies.set("token", response.data.token, { expires: 7, path: "" });
-
-                    commit("setLoading", false, { root: true });
-                    commit(
-                        "setToast",
-                        { show: true, message: response.data.message, type: "success" },
-                        { root: true }
-                    );
                     setTimeout(() => {
                         window.location.href = "/explore";
+                        commit(
+                            "setToast",
+                            { show: true, message: response.data.message, type: "success" },
+                            { root: true }
+                        );
+                        commit("setLoading", false, { root: true });
                     }, 2000);
                 }
             } catch (err) {
@@ -66,14 +65,14 @@ const authModule = {
                 } else {
                     Cookies.set("user", JSON.stringify(response.data.user), { expires: 7, path: "" });
                     Cookies.set("token", response.data.token, { expires: 7, path: "" });
-                    commit("setLoading", false, { root: true });
-                    commit(
-                        "setToast",
-                        { show: true, message: response.data.message, type: "success" },
-                        { root: true }
-                    );
                     setTimeout(() => {
                         window.location.href = "/explore";
+                        commit(
+                            "setToast",
+                            { show: true, message: response.data.message, type: "success" },
+                            { root: true }
+                        );
+                        commit("setLoading", false, { root: true });
                     }, 2000);
                 }
             } catch (err) {
