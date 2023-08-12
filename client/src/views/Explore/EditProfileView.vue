@@ -59,13 +59,13 @@ const updateUser = async () => {
       }, 2000);
     }
   } catch (error) {
-    console.log(error);
+    console.log(error.response);
     store.commit("setLoading", false, { root: true });
     store.commit(
       "setToast",
       {
         show: true,
-        message: error.message,
+        message: error.response.data.message,
         type: "failed",
       },
       { root: true }

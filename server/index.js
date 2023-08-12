@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: true }))
 
 // third-party middleware
 app.use(express.json())
+app.use(express.static("public"))
+app.use("/uploads", express.static("uploads"))
+
 
 
 app.get("/", (req, res) => {

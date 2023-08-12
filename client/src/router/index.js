@@ -5,6 +5,7 @@ import LandingLayout from '../layouts/LandingView.vue'
 
 import HomeView from '../views/Explore/HomeView.vue'
 import ProfileView from '../views/Explore/ProfileView.vue'
+import UploadBookView from '../views/Explore/UploadBookView.vue'
 
 import LoginView from '../views/Landing/LoginView.vue'
 import RegisterView from '../views/Landing/RegisterView.vue'
@@ -55,6 +56,11 @@ const routes = [
         name: 'profile',
         component: ProfileView
 
+      },
+      {
+        path: 'upload',
+        name: 'upload',
+        component: UploadBookView
       }
     ],
     beforeEnter: (to, from, next) => {

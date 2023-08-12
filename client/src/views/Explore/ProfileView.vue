@@ -9,6 +9,10 @@ const user = reactive(JSON.parse(Cookies.get("user")));
 import EditProfileView from "./EditProfileView.vue";
 const showEditProfileModal = ref(false);
 
+// UploadBookView
+import UploadBookView from "./UploadBookView.vue";
+const showUploadBookModal = ref(false);
+
 const logout = () => {
   Cookies.remove("user");
   Cookies.remove("token");
@@ -55,6 +59,17 @@ const logout = () => {
             Logout
           </button>
         </div>
+        <!--  uploads books button -->
+        <button
+          @click="showUploadBookModal = true"
+          class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
+        >
+          Uploads Books
+        </button>
+        <UploadBookView
+          v-if="showUploadBookModal"
+          @close="showUploadBookModal = false"
+        />
       </div>
     </header>
 
