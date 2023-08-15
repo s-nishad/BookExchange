@@ -21,14 +21,4 @@ const toastShow = computed(() => store.state.toast.show);
 </template>
 
 <style>
-* {
-  @font-face {
-    font-family: 'Raleway';
-    src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
-  }
-  font-family: 'Raleway',sans-serif,'Avenir', Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 </style>

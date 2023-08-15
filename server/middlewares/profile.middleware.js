@@ -76,6 +76,40 @@ class ProfileMiddleware {
             });
         }
     }
+    
+    async bookUploadValidation(req, res, next) {
+        try {        
+            const { title, author, description } = req.body;
+
+            if (!req.file) {
+                return res.status(400).json({
+                    status: "error",
+                    message: "Please upload an image.",
+                });
+            }
+
+            // validate file type
+            const image = req.file.mimetype;
+            if (!image.match(/image\/(jpeg|jpg|png)$/)) {
+                return res.status(400).json({
+                    status: "error",
+                    message: "Please upload an image file. (jpeg, jpg, png)",
+                });
+            }
+
+            if (!title || !author || !description ) {
+                return res.status(400).json({
+                    status: "error",
+                    message: "Please enter all required fields.",
+                });
+            }
+
+            next();
+        
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 }
 
 module.exports = ProfileMiddleware;

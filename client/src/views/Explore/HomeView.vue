@@ -10,10 +10,7 @@
                     </svg>
                 </div>
                 <ul class="mt-12">
-                    <li
-                        v-for="department in departments"
-                        :key="department.id"
-                        @click="selectDepartment(department)"
+                    <li v-for="department in departments" :key="department.id" @click="selectDepartment(department)"
                         class="flex w-full justify-between text-white-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center py-3 px-8">
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="18"
@@ -26,33 +23,6 @@
                                 <rect x="14" y="14" width="6" height="6" rx="1"></rect>
                             </svg>
                             <span class="text-sm ml-2">{{ department.name }}</span>
-                        </div>
-                    </li>
-                    <li
-                        class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center px-8 py-3">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="18"
-                                height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                    d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                </path>
-                            </svg>
-                            <span class="text-sm ml-2">Products</span>
-                        </div>
-                    </li>
-                    <li
-                        class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center px-8 py-3">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass" width="18"
-                                height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"></path>
-                                <polyline points="8 16 10 10 16 8 14 14 8 16"></polyline>
-                                <circle cx="12" cy="12" r="9"></circle>
-                            </svg>
-                            <span class="text-sm ml-2">Performance</span>
                         </div>
                     </li>
                 </ul>
@@ -97,10 +67,7 @@
                     </svg>
                 </div>
                 <ul class="mt-12">
-                    <li
-                        v-for="department in departments"
-                        :key="department.id"
-                        @click="selectDepartment(department)"
+                    <li v-for="department in departments" :key="department.id" @click="selectDepartment(department)"
                         class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center py-3 px-8">
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="18"
@@ -115,47 +82,7 @@
                             <span class="text-sm ml-2">{{ department.name }}</span>
                         </div>
                     </li>
-                    <li
-                        class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center px-8 py-3">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="18"
-                                height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                    d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                </path>
-                            </svg>
-                            <span class="text-sm ml-2">Products</span>
-                        </div>
-                    </li>
-                    <li
-                        class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center px-8 py-3">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass" width="18"
-                                height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"></path>
-                                <polyline points="8 16 10 10 16 8 14 14 8 16"></polyline>
-                                <circle cx="12" cy="12" r="9"></circle>
-                            </svg>
-                            <span class="text-sm ml-2">Performance</span>
-                        </div>
-                    </li>
-                    <li
-                        class="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center px-8 py-3">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="20"
-                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"></path>
-                                <polyline points="7 8 3 12 7 16"></polyline>
-                                <polyline points="17 8 21 12 17 16"></polyline>
-                                <line x1="14" y1="4" x2="10" y2="20"></line>
-                            </svg>
-                            <span class="text-sm ml-2">Deliverables</span>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -230,8 +157,8 @@
                                                 </span>
                                             </div>
                                         </li>
-                                        <li
-                                            class="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
+                                        <li class="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2"
+                                            @click="logout">
                                             <div class="flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-logout" width="20" height="20"
@@ -248,14 +175,14 @@
                                     </ul>
                                     <div class="relative">
                                         <img class="rounded-full h-10 w-10 object-cover"
-                                            src="https://tuk-cdn.s3.amazonaws.com/assets/components/sidebar_layout/sl_1.png"
+                                            :src="`https://avatars.dicebear.com/api/initials/${profile.username}.svg`"
                                             alt="avatar" />
                                         <div
                                             class="w-2 h-2 rounded-full bg-green-400 border border-white absolute inset-0 mb-0 mr-0 m-auto">
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-gray-800 text-sm mx-3">Jane Doe</p>
+                                <p class="text-gray-800 text-sm mx-3">{{ profile.username }}</p>
                                 <div class="cursor-pointer text-gray-600">
                                     <svg aria-haspopup="true" xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20"
@@ -314,8 +241,8 @@
                                 <span class="text-sm ml-2">Messages</span>
                             </div>
                         </li>
-                        <li
-                            class="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
+                        <li class="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2"
+                            @click="logout">
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout"
                                     width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -331,7 +258,9 @@
                     </ul>
                     <div class="flex cursor-pointer">
                         <img class="rounded-full h-10 w-10 object-cover"
-                            src="https://tuk-cdn.s3.amazonaws.com/assets/components/sidebar_layout/sl_1.png" alt="avatar" />
+                            :src="`https://avatars.dicebear.com/api/initials/${profile.username}.svg`" 
+                            alt="avatar" 
+                        />
                         <div
                             class="w-2 h-2 rounded-full bg-green-400 border border-white absolute inset-0 mb-0 mr-0 m-auto">
                         </div>
@@ -339,11 +268,8 @@
                 </div>
             </nav>
             <!-- Navigation ends -->
-            <!-- Remove class [ h-64 ] when adding a card block -->
             <div class="container mx-auto md:w-4/5 w-11/12">
-                <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
                 <div class="">
-                    <!-- Place your content here -->
                     <!-- Books Section -->
                     <div class="">
                         <!-- <div
@@ -369,24 +295,19 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div
-                            
-                            >
+                        <div>
                             <h2 class="text-2xl font-semibold mt-8">Books</h2>
                             <div class="flex flex-wrap">
-                                <div
-                                    v-for="book in books"
-                                    :key="book.id"
-                                    class="w-1/2 md:w-1/4 p-4"
-                                    >
+                                <div v-for="book in books" :key="book.id" class="w-1/2 md:w-1/4 p-4">
                                     <div class="bg-white shadow rounded-lg p-4">
-                                        <img
-                                        :src="getImageUrl(book.image)"
-                                        alt="Book Thumbnail"
-                                        class="w-full h-32 object-cover mb-2"
-                                        />
-                                        <h3 class="text-lg font-semibold">{{ book.title }}</h3>
-                                        <p class="text-gray-600">{{ book.department }}</p>
+                                        <img :src="getImageUrl(book.image)" alt="Book Thumbnail"
+                                            class="w-full h-32 object-cover mb-2" />
+                                        <RouterLink :to="`/Book/${book._id}`">
+                                            <h3 class="text-lg font-semibold text-pink-800">{{ book.title }}</h3>
+                                        </RouterLink>
+                                        <p class="text-gray-600">{{ book.author }}</p>
+                                        <p class="text-gray-900">{{ book.user.department }}</p>
+
                                     </div>
                                 </div>
                             </div>
@@ -402,11 +323,15 @@
 <script>
 import api from '@/helpers/api';
 import cookies from "js-cookie";
+import { reactive } from 'vue';
+
+const profile = reactive(JSON.parse(cookies.get("user")));
 
 export default {
     data() {
         return {
             moved: true,
+            profile: profile,
             departments: [
                 {
                     id: 1,
@@ -483,10 +408,11 @@ export default {
             });
         },
         getImageUrl(filename) {
-            //return `/uploads/${filename}`;
-            return `http://localhost:5000/uploads/${filename}`;
+            //return `/uploads/book_image/${filename}`;
+            return `http://localhost:5000/uploads/book_image/${filename}`;
         },
         async fetchBooks() {
+            this.$store.commit("setLoading", true, { root: true });
             try {
                 const response = await api.get("/profile/books/get_books", {
                     headers: {
@@ -505,11 +431,19 @@ export default {
                     );
                 } else {
                     this.$data.books = response.data.books;
+                    this.$store.commit("setLoading", false, { root: true });
                 }
 
             } catch (error) {
                 console.log(error);
             }
+            this.$store.commit("setLoading", false, { root: true });
+        },
+
+        logout() {
+            cookies.remove("user");
+            cookies.remove("token");
+            window.location.reload();
         },
     },
 };

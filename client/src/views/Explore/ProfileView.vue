@@ -80,14 +80,11 @@ const logout = () => {
         <div class="bg-white rounded-lg shadow-lg p-6">
           <h2 class="text-xl font-semibold mb-4">Personal Information</h2>
           <div class="flex items-center mb-2">
-            <ion-icon
-              name="person-circle"
-              class="text-gray-600 mr-2 text-lg"
-            ></ion-icon>
+            <span class="material-icons text-pink-600 mr-2">person</span>
             <p>{{ user.fullname }}</p>
           </div>
           <div class="flex items-center mb-2">
-            <ion-icon name="mail" class="text-gray-600 mr-2 text-lg"></ion-icon>
+            <span class="material-icons text-pink-600 mr-2">email</span>
             <p>{{ user.email }}</p>
           </div>
           <!-- Add more personal information fields as needed -->
@@ -95,19 +92,13 @@ const logout = () => {
 
         <!-- Social Media Links -->
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-xl font-semibold mb-4">Social Media</h2>
+          <h2 class="text-xl font-semibold mb-4">Other Information</h2>
           <div class="flex items-center mb-2">
-            <ion-icon
-              name="logo-twitter"
-              class="text-blue-500 mr-2 text-lg"
-            ></ion-icon>
+            <span class="material-icons text-blue-600 mr-2">mood</span>
             <p>{{ user.username }}</p>
           </div>
           <div class="flex items-center mb-2">
-            <ion-icon
-              name="logo-facebook"
-              class="text-blue-600 mr-2 text-lg"
-            ></ion-icon>
+            <span class="material-icons text-blue-600 mr-2">school</span>
             <p>{{ user.department }}</p>
           </div>
           <!-- Add more social media links as needed -->
@@ -118,5 +109,4 @@ const logout = () => {
 </template>
 
 <style>
-/* Add custom styles as needed */
 </style>
